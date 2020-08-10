@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.first_android.constant.FIRST_NAME
+import com.example.first_android.constant.LAST_NAME
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -40,9 +42,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         println("$activityName ON_DESTROY")
     }
 
-
-
-
     override fun onClick(v: View?) {
         when(v) {
             button_tekan -> toBoardActivity()
@@ -51,8 +50,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun toBoardActivity() {
         val intent = Intent(this, BoardActivity::class.java)
-        intent.putExtra("FIRST_NAME", input_name.text.toString())
-        intent.putExtra("LAST_NAME", input_name2.text.toString())
+        intent.putExtra(FIRST_NAME, input_name.text.toString())
+        intent.putExtra(LAST_NAME, input_name2.text.toString())
         startActivity(intent)
     }
 
