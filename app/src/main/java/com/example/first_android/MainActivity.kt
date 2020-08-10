@@ -12,8 +12,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        button_pencet.setOnClickListener(this)
         button_tekan.setOnClickListener(this)
     }
 
@@ -47,25 +45,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when(v) {
-            button_pencet -> showName()
             button_tekan -> toBoardActivity()
         }
     }
 
     private fun toBoardActivity() {
         val intent = Intent(this, BoardActivity::class.java)
-        intent.putExtra("FISRT_NAME", input_name.text.toString())
+        intent.putExtra("FIRST_NAME", input_name.text.toString())
         intent.putExtra("LAST_NAME", input_name2.text.toString())
         startActivity(intent)
     }
 
-    private fun showName() {
-        val name = input_name.text.toString()
-        name_text_view.text = name
-    }
-
-//    fun handlePencet(view: View) {
-//        val name = input_name.text.toString()
-//        name_text_view.text = name
-//    }
 }

@@ -32,39 +32,27 @@
             android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/name" />
+            android:hint="1'st Player" />
 
         <EditText
             android:id="@+id/input_name2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/name" />
+            android:hint="2nd Player" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_pencet"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            app:cornerRadius="5dp"
-            android:text="@string/pencet"/>
-<!--            android:onClick="handlePencet"-->
+        <!--            android:onClick="handlePencet"-->
 
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_tekan"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            app:cornerRadius="5dp"
-            android:text="SUBMIT"/>
+            android:layout_height="wrap_content"
+            android:background="#6E0327"
+            android:backgroundTint="#FFFFFF"
+            android:text="LETS PLAY"
+            app:cornerRadius="5dp" />
 <!--            android:onClick="handlePencet"-->
 
-
-        <TextView
-            android:id="@+id/name_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="34sp"
-            android:text="@string/your_name"
-            android:textAlignment="center"/>
 
     </LinearLayout>
 
