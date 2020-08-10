@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">first_android</string>
+    <string name="this_is_mainactivity">This is MainActivity</string>
+    <string name="pencet">PENCET</string>
+    <string name="your_name">Your Name</string>
+    <string name="name">Name</string>
+</resources>
