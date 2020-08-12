@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun controllerData(passData: Int) {
-        counterValue.text = passData.toString()
+    fun controllerData(value: Int) {
+        counterValue.text = value.toString()
     }
 
 }
