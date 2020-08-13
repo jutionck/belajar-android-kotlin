@@ -16,6 +16,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/goto_fragment_2"
+            android:onClick="toSecondActivity"
+            />
+
         <fragment
             android:id="@+id/fragment1"
             android:name="com.example.first_android.CounterFragment"

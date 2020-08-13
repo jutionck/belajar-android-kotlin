@@ -7,18 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_counter.*
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CounterFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CounterFragment : Fragment(), View.OnClickListener {
 
-    private lateinit var mainActivity: MainActivity
+//    private lateinit var mainActivity: MainActivity
+    private lateinit var counterHandler: CounterHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainActivity = activity as MainActivity
+//        mainActivity = activity as MainActivity
+        counterHandler = activity as CounterHandler
     }
 
     override fun onCreateView(
@@ -37,13 +34,14 @@ class CounterFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v) {
             increaseButton -> {
-                println("INCREASE BUTTON DI PANGGIL")
-                mainActivity.notifyIncrease()
-
+                println("INCREASE BUTTON DIPANGGIL")
+//                mainActivity.notifyIncrease()
+                counterHandler.notifyIncrease()
             }
             decreaseButton -> {
-                println("DECREASE BUTTON DI PANGGIL")
-                mainActivity.notifyDecrease()
+                println("DECREASE BUTTON DIPANGGIL")
+//                mainActivity.notifyDecrease()
+                counterHandler.notifyDecrease()
             }
         }
     }

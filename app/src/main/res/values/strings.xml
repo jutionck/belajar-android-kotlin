@@ -5,4 +5,7 @@
     <string name="increment">+</string>
     <string name="decrement">-</string>
     <string name="zero">0</string>
+    <string name="counter_show">COUNTER SHOW</string>
+    <string name="counter">COUNTER</string>
+    <string name="goto_fragment_2">GOTO ACTIVITY 2</string>
 </resources>

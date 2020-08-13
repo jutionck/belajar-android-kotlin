@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_counter_show.*
 
 class CounterShowFragment : Fragment() {
+    var counter: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,6 +20,11 @@ class CounterShowFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_counter_show, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        notifyShowCounter(counter)
     }
 
     fun notifyShowCounter(counter: Int) {
