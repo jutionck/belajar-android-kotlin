@@ -25,4 +25,6 @@
     <string name="done">DONE</string>
     <string name="amount_confirmation">Amount Confirmation</string>
     <string name="name_confirmation">Name Confirmation</string>
+    <string name="to">TO: ?</string>
+    <string name="send">SEND</string>
 </resources>
