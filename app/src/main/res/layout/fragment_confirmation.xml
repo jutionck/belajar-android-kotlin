@@ -29,6 +29,7 @@
                 android:src="@drawable/ic_baseline_cloud_done_24"
                 android:contentDescription="@string/image_icon" />
             <TextView
+                android:id="@+id/nameConfirmation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
@@ -36,6 +37,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"/>
             <TextView
+                android:id="@+id/amountConfirmation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"

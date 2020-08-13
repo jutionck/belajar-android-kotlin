@@ -1,10 +1,12 @@
 package com.example.first_android.screens
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.first_android.R
@@ -33,9 +35,18 @@ class FragmentInputAmount : Fragment(), View.OnClickListener {
         button_send.setOnClickListener(this)
     }
 
+    @SuppressLint("SetTextI18n")
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewName.text = "TO : " + arguments?.getString("username")
+    }
+
     override fun onClick(v: View?) {
         when(v) {
-            button_send -> {navController.navigate(R.id.action_fragmentInputAmount_to_fragmentConfirmation)}
+            button_send -> {
+                val bundle = bundleOf("amount" to amount_transfer.text.toString())
+                navController.navigate(R.id.action_fragmentInputAmount_to_fragmentConfirmation, bundle)
+            }
         }
     }
 

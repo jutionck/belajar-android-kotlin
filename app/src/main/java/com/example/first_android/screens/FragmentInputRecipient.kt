@@ -1,10 +1,12 @@
 package com.example.first_android.screens
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.first_android.R
@@ -32,9 +34,13 @@ class FragmentInputRecipient : Fragment(), View.OnClickListener {
         button_next.setOnClickListener(this)
     }
 
+
     override fun onClick(v: View?) {
         when(v) {
-            button_next -> {navController.navigate(R.id.action_fragmentInputRecipient_to_fragmentInputAmount)}
+            button_next -> {
+                val bundle = bundleOf("username" to recipient_name_text.text.toString())
+                navController.navigate(R.id.action_fragmentInputRecipient_to_fragmentInputAmount, bundle)
+            }
         }
     }
 
