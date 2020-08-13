@@ -1,8 +1,28 @@
 <resources>
-    <string name="app_name">Exercise_Fragment</string>
+    <string name="app_name">Exercise_Navigation</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="increment">+</string>
-    <string name="decrement">-</string>
-    <string name="zero">0</string>
+    <string name="history_transaction">HISTORY TRANSACTION</string>
+    <string name="balance">BALANCE</string>
+    <string name="transfer">TRANSFER</string>
+    <string name="bank_prompt">Choose a Bank</string>
+    <string-array name="bank_arrays">
+        <item name="bank_arrays">BCA</item>
+        <item name="bank_arrays">Mandiri</item>
+        <item name="bank_arrays">BRI</item>
+        <item name="bank_arrays">BNI</item>
+        <item name="bank_arrays">CIMB Niaga</item>
+        <item name="bank_arrays">BTPN</item>
+        <item name="bank_arrays">Permata</item>
+    </string-array>
+    <string name="account_number">Account Number</string>
+    <string name="name">Name</string>
+    <string name="next">next</string>
+    <string name="image_icon">TODO</string>
+    <string name="todo_home">TODO</string>
+    <string name="jution_candra_kirana">Jution Candra Kirana</string>
+    <string name="amount">Amount</string>
+    <string name="done">DONE</string>
+    <string name="amount_confirmation">Amount Confirmation</string>
+    <string name="name_confirmation">Name Confirmation</string>
 </resources>
