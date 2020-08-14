@@ -28,4 +28,5 @@
     <string name="to">TO: ?</string>
     <string name="send">SEND</string>
     <string name="bank_name">Bank Name</string>
+    <string name="account_number_confirm">Account Number Confirm</string>
 </resources>

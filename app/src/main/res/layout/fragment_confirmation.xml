@@ -37,13 +37,22 @@
                 android:textAlignment="center"
                 android:textSize="20sp"/>
             <TextView
+                android:id="@+id/accountNumberConfirmation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="@string/account_number_confirm"
+                android:textAlignment="center"
+                android:textSize="20sp"/>
+            <TextView
                 android:id="@+id/amountConfirmation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
                 android:text="@string/amount_confirmation"
                 android:textAlignment="center"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:textStyle="bold"/>
             <TextView
                 android:id="@+id/bankNameConfirmation"
                 android:layout_width="match_parent"

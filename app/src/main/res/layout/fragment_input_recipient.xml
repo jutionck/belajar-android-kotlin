@@ -36,6 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <Spinner
+                    android:id="@+id/accountBank"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:prompt="@string/bank_prompt"
