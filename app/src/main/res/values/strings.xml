@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">first_android</string>
     <string name="this_is_mainactivity">This is MainActivity</string>
-    <string name="pencet">PENCET</string>
     <string name="your_name">Your Name</string>
     <string name="name">Name</string>
     <string name="player_turn">Player Turn</string>
+    <string name="lets_play">LETS PLAY</string>
+    <string name="_2nd_player">2nd Player</string>
+    <string name="_1st_player">1st Player</string>
+    <string name="pencet">PENCET</string>
 </resources>

@@ -11,7 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
         android:text="This is Main Activity"
         android:textAlignment="center"
         android:textSize="34sp"
@@ -22,7 +22,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,15 +32,13 @@
             android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="1'st Player" />
+            android:hint="@string/_1st_player" />
 
         <EditText
             android:id="@+id/input_name2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="2nd Player" />
-
-        <!--            android:onClick="handlePencet"-->
+            android:hint="@string/_2nd_player" />
 
 
         <com.google.android.material.button.MaterialButton
@@ -49,10 +47,26 @@
             android:layout_height="wrap_content"
             android:background="#6E0327"
             android:backgroundTint="#FFFFFF"
-            android:text="LETS PLAY"
+            android:text="@string/lets_play"
             app:cornerRadius="5dp" />
-<!--            android:onClick="handlePencet"-->
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_pencet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#6E0327"
+            android:backgroundTint="#FFFFFF"
+            android:text="@string/pencet"
+            app:cornerRadius="5dp" />
+
+        <TextView
+            android:id="@+id/viewPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="VS"
+            android:textAlignment="center"
+            android:textSize="20dp"/>
 
     </LinearLayout>
 
