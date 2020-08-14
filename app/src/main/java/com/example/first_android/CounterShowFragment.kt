@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.example.first_android.view_model.CounterViewModel
 import kotlinx.android.synthetic.main.fragment_counter_show.*
 
@@ -27,6 +28,10 @@ class CounterShowFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        counterValue.text = counterViewModel.counter.toString()
+        counterViewModel.counter.observe(viewLifecycleOwner, Observer { setCounterToText(it) })
+    }
+
+    private fun setCounterToText(it: Any) {
+        counterValue.text = it.toString()
     }
 }
