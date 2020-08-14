@@ -44,6 +44,14 @@
                 android:text="@string/amount_confirmation"
                 android:textAlignment="center"
                 android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/bankNameConfirmation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="@string/bank_name"
+                android:textAlignment="center"
+                android:textSize="20sp"/>
 
 
             <com.google.android.material.button.MaterialButton
