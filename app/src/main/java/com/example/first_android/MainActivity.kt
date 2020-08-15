@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity(), RecycleClickListener {
         language_recycle_view.layoutManager = LinearLayoutManager(this)
         //language_recycle_view.adapter = LanguageRecycleAdapter(languageViewModel.languageLiveData.value!!)
         languageRecycleAdapter = LanguageRecycleAdapter(languageViewModel.languageLiveData.value!!)
+        languageRecycleAdapter.listener = this
         language_recycle_view.adapter = languageRecycleAdapter
         languageViewModel.languageLiveData.observe(this, Observer {
             languageRecycleAdapter.notifyDataSetChanged()
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity(), RecycleClickListener {
     }
 
     override fun onItemClick(view: View, index: Int) {
-        Toast.makeText(this, "$index Deleted!", Toast.LENGTH_SHORT).show()
         languageViewModel.removeLanguage(index)
+        Toast.makeText(this, "$index Deleted!", Toast.LENGTH_SHORT).show()
     }
 }
