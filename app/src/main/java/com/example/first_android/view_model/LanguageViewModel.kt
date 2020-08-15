@@ -6,7 +6,7 @@ import java.text.FieldPosition
 
 class LanguageViewModel: ViewModel() {
 
-    val languageList: MutableList<String> = mutableListOf("Java", "Python")
+    private val languageList: MutableList<String> = mutableListOf("Java", "Python")
     val languageLiveData: MutableLiveData<MutableList<String>> = MutableLiveData(languageList)
 
     fun addLanguage(name: String) {

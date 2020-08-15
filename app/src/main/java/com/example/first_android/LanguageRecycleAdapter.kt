@@ -6,8 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.language_item_layout.view.*
 
 class LanguageRecycleAdapter(private val languageList: MutableList<String>): RecyclerView.Adapter<LanguageViewHolder>() {
+
+    private lateinit var listener: RecycleClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -24,10 +27,11 @@ class LanguageRecycleAdapter(private val languageList: MutableList<String>): Rec
         holder.orderNumber.text = position.toString()
         holder.languageName.text = languageList[position]
         holder.itemView.setOnClickListener(holder)
-        holder.itemView.setOnClickListener(View.OnClickListener {
+        holder.itemView.delete_button.setOnClickListener {
             languageList.removeAt(position) // remove the item from list
             notifyItemRemoved(position) // notify the adapter about the removed item
-        })
+//            listener.onItemClick(it, position)
+        }
     }
 
 }

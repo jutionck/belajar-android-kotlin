@@ -3,13 +3,14 @@ package com.example.first_android
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.first_android.view_model.LanguageViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), RecycleClickListener {
 
     private val languageViewModel by viewModels<LanguageViewModel>()
     private lateinit var languageRecycleAdapter: LanguageRecycleAdapter
@@ -30,5 +31,10 @@ class MainActivity : AppCompatActivity() {
     fun addLanguage(view: View) {
         val languageName = language_name_input.text.toString()
         languageViewModel.addLanguage(languageName)
+    }
+
+    override fun onItemClick(view: View, index: Int) {
+        Toast.makeText(this, "$index Deleted!", Toast.LENGTH_SHORT).show()
+        languageViewModel.removeLanguage(index)
     }
 }
