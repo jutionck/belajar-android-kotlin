@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         language_recycle_view.layoutManager = LinearLayoutManager(this)
-//        language_recycle_view.adapter = LanguageRecycleAdapter(languageViewModel.languageLiveData.value!!)
+        //language_recycle_view.adapter = LanguageRecycleAdapter(languageViewModel.languageLiveData.value!!)
         languageRecycleAdapter = LanguageRecycleAdapter(languageViewModel.languageLiveData.value!!)
         language_recycle_view.adapter = languageRecycleAdapter
         languageViewModel.languageLiveData.observe(this, Observer {
