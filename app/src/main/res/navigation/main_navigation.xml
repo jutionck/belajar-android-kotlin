@@ -20,7 +20,12 @@
         android:id="@+id/fragmentAddSong"
         android:name="com.example.first_android.screens.FragmentAddSong"
         android:label="fragment_add_song"
-        tools:layout="@layout/fragment_add_song" />
+        tools:layout="@layout/fragment_add_song" >
+        <action
+            android:id="@+id/action_fragmentAddSong_pop2"
+            app:popUpTo="@id/fragmentAddSong"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentDetail"
         android:name="com.example.first_android.screens.FragmentDetail"

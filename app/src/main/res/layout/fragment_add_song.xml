@@ -10,7 +10,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
         android:layout_width="match_parent"
-        android:backgroundTint="@android:color/holo_green_light"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:layout_height="300dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -28,16 +28,16 @@
             android:layout_margin="20dp">
 
             <EditText
-                android:id="@+id/input_name"
+                android:id="@+id/input_artist_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:hint="@string/name_add_song"
-                android:inputType="textPersonName"
-                android:autofillHints="" />
+                android:autofillHints=""
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/input_title"
+                android:id="@+id/input_song_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
@@ -46,7 +46,7 @@
                 android:autofillHints="" />
 
             <EditText
-                android:id="@+id/input_image"
+                android:id="@+id/input_song_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
@@ -59,14 +59,14 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/save_btn"
+        android:id="@+id/button_save"
         app:cornerRadius="20dp"
         android:layout_width="375dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/save_song"
         android:textSize="25sp"
-        android:backgroundTint="@android:color/holo_orange_dark"
+        android:backgroundTint="@color/colorGreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView" />

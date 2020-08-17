@@ -28,7 +28,8 @@ class FragmentDetail : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        title_detail.text = songViewModel.details["title"]
+        song_title_detail.text = songViewModel.details["title"]
+        Picasso.with(activity).load(songViewModel.details["image"]).into(song_image_detail)
     }
 
 }

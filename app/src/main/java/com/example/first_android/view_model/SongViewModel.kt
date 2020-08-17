@@ -6,7 +6,7 @@ import java.text.FieldPosition
 
 class SongViewModel: ViewModel() {
 
-    private val song: MutableList<MutableMap<String,String>>
+    private val songList: MutableList<MutableMap<String,String>>
             =
         mutableListOf(
             mutableMapOf(
@@ -25,19 +25,20 @@ class SongViewModel: ViewModel() {
                 "name" to "FourTwnty",
                 "title" to "Nematomorpha",
                 "image" to "https://pophariini.com/wp-content/uploads/2018/09/Fourtwnty.jpg"))
-    val songData:MutableLiveData<MutableList<MutableMap<String,String>>> = MutableLiveData(song)
+
+    val songData:MutableLiveData<MutableList<MutableMap<String,String>>> = MutableLiveData(songList)
 
     val details:MutableMap<String,String> = mutableMapOf()
 
     fun addSong(name:String,title:String,image:String){
         val inputData:MutableMap<String,String> =
             mutableMapOf("name" to name,"title" to title,"image" to image)
-        song.add(inputData)
-        songData.value = song
+        songList.add(inputData)
+        songData.value = songList
     }
 
     fun detailSong(position:Int){
-        val detail = song[position]
+        val detail = songList[position]
         details["name"] = detail["name"].toString()
         details["title"] = detail["title"].toString()
         details["image"] = detail["image"].toString()

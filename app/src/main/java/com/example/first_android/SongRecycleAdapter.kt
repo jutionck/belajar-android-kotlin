@@ -48,7 +48,6 @@ class SongViewHolder(v: View, private val songList: SongViewModel): RecyclerView
         when(v){
             itemView -> {
                 songList.detailSong(orderNumber)
-                Toast.makeText(v.context,"${songTitle.text} is Clicked", Toast.LENGTH_SHORT).show()
                 itemView.findNavController().navigate(R.id.action_fragmentHome_to_fragmentDetail)
             }
         }
