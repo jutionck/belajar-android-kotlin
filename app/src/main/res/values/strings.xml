@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">UI Thread</string>
-    <string name="start">START</string>
+    <string name="app_name">Room Database</string>
+    <string name="submit">Submit</string>
+    <string name="debut">Debut</string>
+    <string name="name">Name</string>
+    <string name="debutview">DebutView</string>
 
 </resources>

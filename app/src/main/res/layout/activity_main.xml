@@ -5,30 +5,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgg"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="156dp"
-        android:text="@string/start"
-        android:onClick="startProgress"
-        android:backgroundTint="@android:color/holo_orange_light"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="338dp"
-        android:layout_height="20dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/artistNameInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:ems="10"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/debutInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/debut"
+            android:ems="10"/>
+        
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="@string/submit"
+            android:onClick="addNewArtist"
+            app:cornerRadius="10dp"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/artistRecycleView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

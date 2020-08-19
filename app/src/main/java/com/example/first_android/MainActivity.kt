@@ -1,49 +1,36 @@
 package com.example.first_android
 
-import android.app.ProgressDialog
-import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ProgressBar
+import androidx.activity.viewModels
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.first_android.room.artist.Artist
+import com.example.first_android.viewmodel.ArtistViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
 
-    //for class dialog task
-    //private lateinit var progressDialog: ProgressDialog
-//    private val maxProgress: Int = 100
+    private val artistViewModel by viewModels<ArtistViewModel>()
+    private lateinit var artistRecycleViewAdapter: ArtistRecycleViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        progressBar.max = maxProgress
-        //for class dialog task
-        //progressDialog = ProgressDialog(this)
-        //progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER)
+        artistRecycleView.layoutManager = LinearLayoutManager(this)
+
+        artistViewModel.allArtist.observe(this, Observer {
+            artistRecycleViewAdapter = ArtistRecycleViewAdapter(it)
+            artistRecycleView.adapter = artistRecycleViewAdapter
+        })
     }
 
-    fun startProgress(view: View) {
-        val fetchDataTask = FetchDataTask()
-        fetchDataTask.execute()
-
-//        CoroutineScope(Dispatchers.Main).launch {
-//            for (i in 1..100){
-//                progressBar.progress = i
-//                println(i)
-//                delay(50)
-//            }
-//        }
-        //val progressThread = ProgressThread(progressBar)
-        //progressThread.start()
-        //val progressTask = ProgressTask(progressBar)
-        //progressTask.execute()
-        //val progressDialogTask = ProgressDialogTask(progressDialog)
-        //progressDialogTask.execute()
-
+    fun addNewArtist(view: View) {
+        val name = artistNameInputText.text.toString()
+        val debut = debutInputText.text.toString()
+        artistViewModel.createNewArtist(Artist(name = name, debut = debut, originPlace = ""))
     }
-
 }
 
 
