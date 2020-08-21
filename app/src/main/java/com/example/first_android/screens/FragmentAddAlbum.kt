@@ -5,20 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.first_android.AlbumRecycleAdapter
 import com.example.first_android.R
+import com.example.first_android.room.music.Album
 import com.example.first_android.view_model.AlbumViewModel
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_add_album.*
 
-class FragmentHome : Fragment(), View.OnClickListener {
+class FragmentAddAlbum : Fragment(), View.OnClickListener {
 
-    private val albumViewModel by activityViewModels<AlbumViewModel>()
-    private lateinit var albumRecycleAdapter: AlbumRecycleAdapter
+    private val songViewModel by activityViewModels<AlbumViewModel>()
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,24 +28,27 @@ class FragmentHome : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_add_album, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        song_recycle_view.layoutManager = LinearLayoutManager(activity)
-        albumViewModel.allAlbum.observe(viewLifecycleOwner, Observer {
-            albumRecycleAdapter = AlbumRecycleAdapter(it, activity)
-            song_recycle_view.adapter = albumRecycleAdapter
-        })
-
-        fab.setOnClickListener(this)
         navController= Navigation.findNavController(view)
+        button_save.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when(v){
-            fab -> {navController.navigate(R.id.action_fragmentHome_to_fragmentAddAlbum)}
+            button_save->{
+                val albumTitle = input_song_title.text.toString()
+                val artistName = input_artist_name.text.toString()
+                val albumImage = input_song_image.text.toString()
+                songViewModel.createNewAlbum(Album(albumTitle = albumTitle, artistName = artistName, albumImage = albumImage ))
+                Toast.makeText(v?.context,"SUCCESS: Add Album", Toast.LENGTH_SHORT).show()
+                navController.navigate(R.id.action_fragmentAddAlbum_pop)
+            }
+
         }
     }
+
 }

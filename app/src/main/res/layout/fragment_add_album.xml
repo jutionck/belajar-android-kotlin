@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout4"
+    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.FragmentAddSong">
+    tools:context=".screens.FragmentAddAlbum">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
@@ -28,20 +28,30 @@
             android:layout_margin="20dp">
 
             <EditText
-                android:id="@+id/input_song_title"
+                android:id="@+id/input_artist_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:hint="@string/song_title"
+                android:hint="@string/name_add_song"
                 android:autofillHints=""
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/input_song_duration"
+                android:id="@+id/input_song_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:hint="@string/duration_seconds"
+                android:hint="@string/title_add_song"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/input_song_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:hint="@string/url_image"
+                android:layout_marginBottom="0dp"
                 android:inputType="textPersonName"
                 android:autofillHints="" />
         </LinearLayout>

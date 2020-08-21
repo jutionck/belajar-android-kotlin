@@ -14,5 +14,10 @@
     <string name="url_image">Url Image</string>
     <string name="title_add_song">Title</string>
     <string name="name_add_song">Name</string>
+    <string name="band_name">Band Name</string>
+    <string name="album_title">Album Title</string>
+    <string name="_03_15">03:15</string>
+    <string name="duration_seconds">Duration (seconds)</string>
+    <string name="song_title">Song Title</string>
 
 </resources>
