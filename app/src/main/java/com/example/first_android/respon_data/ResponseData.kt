@@ -3,5 +3,5 @@ package com.example.first_android.respon_data;
 class ResponseData(
     var status: String = "",
     var message: String = "",
-    var data: Any
+    var result: Any
 )

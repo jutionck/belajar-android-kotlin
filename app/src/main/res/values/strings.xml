@@ -13,5 +13,14 @@
     <string name="last_name">Last Name</string>
     <string name="fisrt_name">Fisrt Name</string>
     <string name="username">Username</string>
+    <string name="_0_min">0 Min</string>
+    <string name="todo_imageView">TODO</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="todo_imagaHome">TODO</string>
+    <string name="synopsisTextInput">Synopsis</string>
+    <string name="film_image_urlTextInput">Film Image URL</string>
+    <string name="duration_minnute">Duration (minnute)</string>
+    <string name="film_titleTextInput">Film Title</string>
+    <string name="saveBtn">SAVE</string>
 
 </resources>

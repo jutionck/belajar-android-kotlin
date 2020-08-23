@@ -21,12 +21,12 @@ class MainActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.showFood -> {
-                    navController.navigate(R.id.action_to_fragment_food)
+                    navController.navigate(R.id.action_to_fragment_film)
                     true
                 }
 
                 R.id.createFood -> {
-                    navController.navigate(R.id.action_to_fragment_create_food)
+                    navController.navigate(R.id.action_to_fragment_create_film)
                     true
                 }
                 else -> {
