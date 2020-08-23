@@ -25,9 +25,12 @@ class FilmRecycleAdapter(private val filmList: List<Film>) : RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
-        holder.filmID.tag = filmList[position].filmID
-//        Picasso.get().load(filmList[position].filmImageURL).into(holder.imageFilm)
-        val bundle = bundleOf(Pair("position", filmList[position].filmID))
+        if (filmList[position].film_image_url.isEmpty()) {
+            holder.imageFilm.setImageResource(R.drawable.ic_baseline_add_photo_alternate_24);
+        } else{
+            Picasso.get().load(filmList[position].film_image_url).into(holder.imageFilm)
+        }
+        val bundle = bundleOf(Pair("filmID", filmList[position].film_id))
         holder.itemView.setOnClickListener {
             Navigation.findNavController(it)
                 .navigate(R.id.action_filmFragment_to_filmDetailFragment, bundle)
@@ -36,6 +39,5 @@ class FilmRecycleAdapter(private val filmList: List<Film>) : RecyclerView.Adapte
 }
 
 class FilmViewHolder(v: View): RecyclerView.ViewHolder(v) {
-    val filmID: MaterialCardView = v.findViewById<MaterialCardView>(R.id.item)
     val imageFilm: ImageView = v.findViewById<ImageView>(R.id.image_film)
 }

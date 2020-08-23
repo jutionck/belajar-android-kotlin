@@ -33,7 +33,8 @@ class FilmFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        filmsRecycleView.layoutManager = LinearLayoutManager(activity)
+        val gridRecycleView = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        filmsRecycleView.layoutManager = gridRecycleView
         filmViewModel.getAllFilm()
         filmViewModel.filmList.observe(viewLifecycleOwner, Observer {
             filmRecycleAdapter = FilmRecycleAdapter(it)

@@ -32,10 +32,10 @@ class CreateFilmFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         submitFilm.setOnClickListener {
-            val newFilm = Film(filmTitle = filmTitleTextInput.text.toString()
-                ,filmDuration = filmDurationTextInput.text.toString()
-                ,filmImageURL = filmImageURLtextInput.text.toString()
-                ,filmSynopsis = filmSynopsisTextInput.text.toString())
+            val newFilm = Film(film_title = filmTitleTextInput.text.toString()
+                ,film_duration = filmDurationTextInput.text.toString()
+                ,film_image_url = filmImageURLtextInput.text.toString()
+                ,film_synopsis = filmSynopsisTextInput.text.toString())
             filmViewModel.createFilm(newFilm)
             Navigation.findNavController(view).navigate(R.id.action_createFilmFragment_pop)
         }

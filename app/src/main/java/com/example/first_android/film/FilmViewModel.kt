@@ -10,8 +10,8 @@ class FilmViewModel : ViewModel() {
     private val filmRepository: FilmRepository
 
     init {
-        val userAPI = RetrofitBuilder.createRetrofit().create(FilmAPI::class.java)
-        filmRepository = FilmRepository(userAPI)
+        val filmAPI = RetrofitBuilder.createRetrofit().create(FilmAPI::class.java)
+        filmRepository = FilmRepository(filmAPI)
     }
 
     val film: LiveData<Film> = filmRepository.film

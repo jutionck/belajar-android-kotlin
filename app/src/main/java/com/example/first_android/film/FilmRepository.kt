@@ -10,12 +10,13 @@ import retrofit2.Response
 class FilmRepository(private val filmAPI: FilmAPI) {
 
     var film: MutableLiveData<Film> = MutableLiveData<Film>()
-    var filmList: MutableLiveData<List<Film>> = MutableLiveData<List<Film>>()
+    val filmList: MutableLiveData<List<Film>> = MutableLiveData<List<Film>>()
 
     fun getAllFilm(){
 
         //enqueue like a coroutine, make new request
         filmAPI.getAllFilm().enqueue(object : Callback<ResponseData> {
+
             override fun onFailure(call: Call<ResponseData>, t: Throwable) {
                 println(t.localizedMessage)
             }

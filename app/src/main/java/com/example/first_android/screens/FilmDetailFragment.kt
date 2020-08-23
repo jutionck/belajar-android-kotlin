@@ -30,13 +30,12 @@ class FilmDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val filmID = arguments?.getString("position")?:""
-        println(id)
+        val filmID = arguments?.getString("filmID") ?: ""
         filmViewModel.getFilmByID(filmID)
         filmViewModel.film.observe(viewLifecycleOwner, Observer {
-            durationViewText.text = it.filmDuration
-            synopsisViewText.text = it.filmSynopsis
-//            Picasso.get().load(it.filmImageURL).into(image_detail)
+            duration_film_detail.text = it.film_duration
+            synopsis_film_detail.text = it.film_synopsis
+            Picasso.get().load(it.film_image_url).into(image_film_detail)
         })
     }
 }

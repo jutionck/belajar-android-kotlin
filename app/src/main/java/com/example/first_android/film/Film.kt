@@ -1,9 +1,9 @@
 package com.example.first_android.film
 
 class Film (
-    var filmID: String = "",
-    var filmTitle: String = "",
-    var filmDuration: String = "",
-    var filmImageURL: String = "",
-    var filmSynopsis: String = ""
+    var film_id: String = "",
+    var film_title: String = "",
+    var film_duration: String = "",
+    var film_image_url: String = "",
+    var film_synopsis: String = ""
 )
