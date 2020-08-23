@@ -15,6 +15,7 @@ class FilmViewModel : ViewModel() {
     }
 
     val film: LiveData<Film> = filmRepository.film
+    val filmList: LiveData<List<Film>> = filmRepository.filmList
 
     fun getAllFilm() {
         filmRepository.getAllFilm()

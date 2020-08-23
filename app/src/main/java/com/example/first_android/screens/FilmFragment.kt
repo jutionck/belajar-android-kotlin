@@ -35,7 +35,7 @@ class FilmFragment : Fragment() {
 
         filmsRecycleView.layoutManager = LinearLayoutManager(activity)
 
-        filmViewModel.film.observe(viewLifecycleOwner, Observer {
+        filmViewModel.filmList.observe(viewLifecycleOwner, Observer {
             filmRecycleAdapter = FilmRecycleAdapter(it, activity)
             filmsRecycleView.adapter = filmRecycleAdapter
         })
