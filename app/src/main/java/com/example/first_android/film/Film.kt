@@ -1,6 +1,6 @@
 package com.example.first_android.film
 
-class Film(
+class Film (
     var filmID: String = "",
     var filmTitle: String = "",
     var filmDuration: String = "",

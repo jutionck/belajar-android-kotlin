@@ -30,4 +30,16 @@ class FilmFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_film, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        filmsRecycleView.layoutManager = LinearLayoutManager(activity)
+
+        filmViewModel.film.observe(viewLifecycleOwner, Observer {
+            filmRecycleAdapter = FilmRecycleAdapter(it, activity)
+            filmsRecycleView.adapter = filmRecycleAdapter
+        })
+        filmViewModel.getAllFilm()
+    }
+
 }
