@@ -2,35 +2,43 @@ package com.example.first_android
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.first_android.room.artist.Artist
-import com.example.first_android.viewmodel.ArtistViewModel
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val artistViewModel by viewModels<ArtistViewModel>()
-    private lateinit var artistRecycleViewAdapter: ArtistRecycleViewAdapter
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        artistRecycleView.layoutManager = LinearLayoutManager(this)
 
-        artistViewModel.allArtist.observe(this, Observer {
-            artistRecycleViewAdapter = ArtistRecycleViewAdapter(it)
-            artistRecycleView.adapter = artistRecycleViewAdapter
-        })
+        navController = (nav_main_host_fragment_container as NavHostFragment).navController
+        NavigationUI.setupWithNavController(bottom_navigation, navController)
+
+        bottom_navigation.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.showFood -> {
+                    navController.navigate(R.id.action_to_fragment_food)
+                    true
+                }
+
+                R.id.createFood -> {
+                    navController.navigate(R.id.action_to_fragment_create_food)
+                    true
+                }
+                else -> {
+                    println("MASUK ELSE")
+                    false
+                }
+            }
+        }
+
     }
 
-    fun addNewArtist(view: View) {
-        val name = artistNameInputText.text.toString()
-        val debut = debutInputText.text.toString()
-        artistViewModel.createNewArtist(Artist(name = name, debut = debut, originPlace = ""))
-    }
+
 }
 
 
