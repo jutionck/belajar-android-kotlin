@@ -21,8 +21,8 @@ class FilmViewModel : ViewModel() {
         filmRepository.getAllFilm()
     }
 
-    fun getFilmByID(userID: String) {
-        filmRepository.getFilmByID(userID)
+    fun getFilmByID(filmID: String) {
+        filmRepository.getFilmByID(filmID)
     }
 
     fun createFilm(film: Film) {

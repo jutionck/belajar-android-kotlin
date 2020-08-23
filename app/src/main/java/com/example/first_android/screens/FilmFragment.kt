@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.first_android.R
 import com.example.first_android.film.FilmRecycleAdapter
 import com.example.first_android.film.FilmViewModel
@@ -32,14 +33,12 @@ class FilmFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         filmsRecycleView.layoutManager = LinearLayoutManager(activity)
-
+        filmViewModel.getAllFilm()
         filmViewModel.filmList.observe(viewLifecycleOwner, Observer {
-            filmRecycleAdapter = FilmRecycleAdapter(it, activity)
+            filmRecycleAdapter = FilmRecycleAdapter(it)
             filmsRecycleView.adapter = filmRecycleAdapter
         })
-        filmViewModel.getAllFilm()
     }
 
 }
