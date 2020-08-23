@@ -16,6 +16,10 @@ class FilmViewModel : ViewModel() {
 
     val film: LiveData<Film> = filmRepository.film
 
+    fun getAllFilm() {
+        filmRepository.getAllFilm()
+    }
+
     fun getFilmByID(userID: String) {
         filmRepository.getFilmByID(userID)
     }

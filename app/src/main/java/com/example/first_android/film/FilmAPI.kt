@@ -13,7 +13,7 @@ interface FilmAPI {
     fun getAllFilm(): Call<Film>
 
     @GET("film/{filmID}")
-    fun getFilmByID(@Path("filmID") id: String): Call<ResponseData>
+    fun getFilmByID(@Path("filmID") id: String): Call<Film>
 
     @POST("film")
     fun createFilm(@Body film: Film): Call<ResponseData>

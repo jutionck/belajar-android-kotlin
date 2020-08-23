@@ -14,23 +14,14 @@ class FilmRepository(private val filmAPI: FilmAPI) {
     fun getAllFilm(){
 
         //enqueue like a coroutine, make new request
-        filmAPI.getAllFilm().enqueue(object : Callback<ResponseData> {
+        filmAPI.getAllFilm().enqueue(object : Callback<Film> {
 
-            override fun onFailure(call: Call<ResponseData>, t: Throwable) {
+            override fun onFailure(call: Call<Film>, t: Throwable) {
                 println(t.localizedMessage)
             }
 
-            override fun onResponse(call: Call<ResponseData>, response: Response<ResponseData>) {
+            override fun onResponse(call: Call<Film>, response: Response<Film>) {
                 film.value = response.body()
-
-                //if use response in your API
-                if(response.code()==200) {
-                    val responses = response.body()
-                    val gson = Gson()
-                    val stringResult = gson.toJson(responses?.)
-                    val nanna = gson.fromJson<Film>(stringResult, Film::class.java::class.java)
-                    film.value = nanna
-                }
             }
         })
     }

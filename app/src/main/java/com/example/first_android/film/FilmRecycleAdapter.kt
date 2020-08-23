@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.first_android.R
 import com.squareup.picasso.Picasso
 
 class FilmRecycleAdapter(
@@ -26,25 +27,15 @@ class FilmRecycleAdapter(
     }
 
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
-        holder.index = position.toString()
-        holder.itemView.setOnClickListener(holder)
-        Picasso.with(getActivity).load(albumList[position].albumImage).into(holder.imageSong)
-        Glide.with(context).load(imageName).into(holder.imageFilm)
-    }
-
-}
-
-class FilmViewHolder(v: View) : RecyclerView.ViewHolder(v), View.OnClickListener {
-    var index: String = ""
-    var imageFilm: ImageView = v.findViewById(R.id.image_film)
-
-    override fun onClick(v: View?) {
-        when(v) {
-            itemView -> {
-                filmViewModel.getFilmByID(index)
-                itemView.findNavController().navigate(R.id.action_filmFragment_to_detailFilmFragment)
-            }
-
+        Picasso.with(getActivity).load(filmList[position].filmImageURL).into(holder.imageSong)
+        val bundle = bundleOf(Pair("filmID", filmList[position].filmID))
+        holder.itemView.setOnClickListener {
+            Navigation.findNavController(it)
+                .navigate(R.id.action_filmFragment_to_filmDetailFragment, bundle)
         }
     }
+}
+
+class FilmViewHolder(v: View): RecyclerView.ViewHolder(v) {
+    val imageSong: ImageView = v.findViewById<ImageView>(R.id.image_film)
 }

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.first_android.R
 import com.example.first_android.film.FilmRecycleAdapter
 import com.example.first_android.film.FilmViewModel
+import kotlinx.android.synthetic.main.fragment_film.*
 
 class FilmFragment : Fragment() {
 
@@ -27,17 +28,6 @@ class FilmFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_film, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        filmRecycleAdapter.layoutManager = LinearLayoutManager(this.context)
-
-        filmViewModel.film.observe(viewLifecycleOwner, Observer {
-            filmRecycleAdapter = FilmRecycleAdapter(it, filmViewModel)
-            filmRecycleAdapter.adapter = filmRecycleAdapter
-        })
     }
 
 }
