@@ -41,7 +41,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
             btnTransfer -> {navController.navigate(R.id.action_homeFragment_to_transferFragment)}
             btnHistory -> {navController.navigate(R.id.action_homeFragment_to_historyFragment)}
             btnCallOffice -> {
-
+                Toast.makeText(this.context, "Call Button : Comming Soon", Toast.LENGTH_SHORT).show()
             }
         }
     }
