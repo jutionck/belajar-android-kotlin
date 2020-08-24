@@ -8,19 +8,36 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="show_data_food">Show Data</string>
     <string name="create_data_food">Create Data</string>
-    <string name="password">Password</string>
     <string name="submit_user">SUBMIT</string>
-    <string name="last_name">Last Name</string>
-    <string name="fisrt_name">Fisrt Name</string>
-    <string name="username">Username</string>
-    <string name="_0_min">0 Min</string>
     <string name="todo_imageView">TODO</string>
     <string name="synopsis">Synopsis</string>
     <string name="todo_imagaHome">TODO</string>
-    <string name="synopsisTextInput">Synopsis</string>
-    <string name="film_image_urlTextInput">Film Image URL</string>
-    <string name="duration_minnute">Duration (minnute)</string>
-    <string name="film_titleTextInput">Film Title</string>
     <string name="saveBtn">SAVE</string>
+    <string name="username_or_email">Username or Email</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="_200">$ 200</string>
+    <string name="bank_account">Bank Account</string>
+    <string name="image_icon">image_icon</string>
+    <string name="bank_prompt">Choose a Bank</string>
+    <string name="send">send</string>
+    <string name="keterangan_transfer">Keterangan Transfer</string>
+    <string name="jumlah_transfer">Jumlah Transfer</string>
+    <string name="done">done_tf</string>
+    <string name="_01_july_2020_07_00_pm">01 July 2020 07:00 pm</string>
+    <string name="_2000">$2000</string>
+    <string name="film_titleTextInput">film_titleTextInput</string>
+    <string name="duration_minnute">duration_minnute</string>
+    <string name="film_image_urlTextInput">film_image_urlTextInput</string>
+    <string name="synopsisTextInput">synopsisTextInput</string>
+    <string-array name="bank_arrays">
+        <item name="bank_arrays">BCA</item>
+        <item name="bank_arrays">Mandiri</item>
+        <item name="bank_arrays">BRI</item>
+        <item name="bank_arrays">BNI</item>
+        <item name="bank_arrays">CIMB Niaga</item>
+        <item name="bank_arrays">BTPN</item>
+        <item name="bank_arrays">Permata</item>
+    </string-array>
 
 </resources>

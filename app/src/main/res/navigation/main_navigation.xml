@@ -4,38 +4,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/filmFragment">
-
+    app:startDestination="@id/loginFragment">
     <action
-        android:id="@+id/action_to_fragment_film"
-        app:destination="@+id/filmFragment"/>
-
-    <action
-        android:id="@+id/action_to_fragment_create_film"
-        app:destination="@+id/createFilmFragment"/>
-
+        android:id="@+id/action_transferFragment_to_amountFragment"
+        app:destination="@id/amountFragment" />
     <fragment
-        android:id="@+id/filmFragment"
-        android:name="com.example.first_android.screens.FilmFragment"
-        android:label="fragment_film"
-        tools:layout="@layout/fragment_film" >
-        <action
-            android:id="@+id/action_filmFragment_to_filmDetailFragment"
-            app:destination="@id/filmDetailFragment" />
+        android:id="@+id/transferFragment"
+        android:name="com.example.first_android.screens.TransferFragment"
+        android:label="fragment_transfer"
+        tools:layout="@layout/fragment_transfer" >
+    </fragment>
+    <action
+        android:id="@+id/action_amountFragment_to_confirmFragment"
+        app:destination="@id/confirmFragment" />
+    <fragment
+        android:id="@+id/amountFragment"
+        android:name="com.example.first_android.screens.AmountFragment"
+        android:label="fragment_amount"
+        tools:layout="@layout/fragment_amount" >
     </fragment>
     <fragment
-        android:id="@+id/createFilmFragment"
-        android:name="com.example.first_android.screens.CreateFilmFragment"
-        android:label="fragment_create_film"
-        tools:layout="@layout/fragment_create_film" >
-        <action
-            android:id="@+id/action_createFilmFragment_pop"
-            app:popUpTo="@id/createFilmFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+        android:id="@+id/confirmFragment"
+        android:name="com.example.first_android.screens.ConfirmFragment"
+        android:label="fragment_confirm"
+        tools:layout="@layout/fragment_confirm" />
     <fragment
-        android:id="@+id/filmDetailFragment"
-        android:name="com.example.first_android.screens.FilmDetailFragment"
-        android:label="fragment_film_detail"
-        tools:layout="@layout/fragment_film_detail" />
+        android:id="@+id/historyFragment"
+        android:name="com.example.first_android.screens.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.first_android.screens.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_transferFragment"
+            app:destination="@id/transferFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_loginFragment_to_homeFragment"
+        app:destination="@id/homeFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.first_android.screens.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+    </fragment>
 </navigation>
