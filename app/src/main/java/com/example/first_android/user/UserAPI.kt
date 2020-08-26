@@ -12,7 +12,6 @@ interface UserAPI {
     @GET("user/{userID}")
     fun getUserByID(@Path("userID") id: String): Call<User>
 
-
     @POST("user")
     fun createUser(@Body user: User): Call<ResponseData>
 }

@@ -16,12 +16,12 @@
 
     <fragment
         android:id="@+id/foodFragment"
-        android:name="com.example.first_android.FoodFragment"
+        android:name="com.example.first_android.screen.FoodFragment"
         android:label="fragment_food"
         tools:layout="@layout/fragment_food" />
     <fragment
         android:id="@+id/createFoodFragment"
-        android:name="com.example.first_android.CreateFoodFragment"
+        android:name="com.example.first_android.screen.CreateFoodFragment"
         android:label="fragment_create_food"
         tools:layout="@layout/fragment_create_food" >
         <action

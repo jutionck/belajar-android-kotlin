@@ -1,23 +1,26 @@
-package com.example.first_android
+package com.example.first_android.screen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import com.example.first_android.food.FoodViewModel
+import com.example.first_android.MyApplication
+import com.example.first_android.R
+import com.example.first_android.container.AppContainer
 import com.example.first_android.user.UserViewModel
 import kotlinx.android.synthetic.main.fragment_food.*
 
 class FoodFragment : Fragment(), View.OnClickListener {
 
-    private val userViewModel by activityViewModels<UserViewModel>()
+//    private val userViewModel by activityViewModels<UserViewModel>()
 
+    private lateinit var appContainer: AppContainer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        appContainer = (activity?.application as MyApplication).appContainer
     }
 
     override fun onCreateView(
@@ -29,14 +32,14 @@ class FoodFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        userViewModel.user.observe(viewLifecycleOwner, Observer {
+        appContainer.userViewModel.user.observe(viewLifecycleOwner, Observer {
             artistNameText.text = it.username
         })
         fetchButton.setOnClickListener(this)
     }
 
     private fun getFoodByID() {
-        userViewModel.getUser(artistInputText.text.toString())
+        appContainer.userViewModel.getUser(artistInputText.text.toString())
     }
 
     override fun onClick(v: View?) {

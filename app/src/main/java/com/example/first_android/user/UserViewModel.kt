@@ -4,15 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.first_android.config.RetrofitBuilder
 
-class UserViewModel : ViewModel() {
-
-
-    private val userRepository: UserRepository
-
-    init {
-        val userAPI = RetrofitBuilder.createRetrofit().create(UserAPI::class.java)
-        userRepository = UserRepository(userAPI)
-    }
+class UserViewModel(private val userRepository: UserRepository) : ViewModel() {
 
     val user: LiveData<User> = userRepository.user
 

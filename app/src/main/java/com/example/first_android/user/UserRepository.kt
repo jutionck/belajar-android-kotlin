@@ -12,7 +12,7 @@ class UserRepository(private val userAPI: UserAPI) {
     var user: MutableLiveData<User> = MutableLiveData<User>()
 
     fun getUser(userID: String){
-        //enqueue seperti coroutine, membuat request baru di antrian request
+        //enqueue like coroutine
         userAPI.getUserByID(userID).enqueue(object : Callback<User> {
 
             override fun onFailure(call: Call<User>, t: Throwable) {
