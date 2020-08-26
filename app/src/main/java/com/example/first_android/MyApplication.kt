@@ -5,6 +5,6 @@ import com.example.first_android.container.AppContainer
 
 class MyApplication : Application() {
 
-    val appContainer: AppContainer =
-        AppContainer()
+//    val appContainer: AppContainer = AppContainer()
+    val applicationComponent: ApplicationComponent = DaggerApplicationComponent.create()
 }

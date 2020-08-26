@@ -6,19 +6,4 @@ import com.example.first_android.user.UserViewModel
 
 class AppContainer {
 
-    private val userAPI: UserAPI = RetrofitBuilder.createRetrofit().create(UserAPI::class.java)
-    private val userRepository: UserRepository = UserRepository(userAPI)
-    val userViewModel: UserViewModel = UserViewModel(userRepository)
-}
-
-class UserViewModelFactory(val userRepository: UserRepository):
-    Factory<UserViewModel> {
-    override fun create(): UserViewModel {
-        return UserViewModel(userRepository)
-    }
-
-}
-
-interface Factory<T>{
-    fun create(): T
 }

@@ -3,8 +3,9 @@ package com.example.first_android.user
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.first_android.config.RetrofitBuilder
+import javax.inject.Inject
 
-class UserViewModel(private val userRepository: UserRepository) : ViewModel() {
+class UserViewModel @Inject constructor(private val userRepository: UserRepository) : ViewModel() {
 
     val user: LiveData<User> = userRepository.user
 

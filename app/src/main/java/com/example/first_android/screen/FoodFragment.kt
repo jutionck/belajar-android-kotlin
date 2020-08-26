@@ -12,15 +12,17 @@ import com.example.first_android.R
 import com.example.first_android.container.AppContainer
 import com.example.first_android.user.UserViewModel
 import kotlinx.android.synthetic.main.fragment_food.*
+import javax.inject.Inject
 
 class FoodFragment : Fragment(), View.OnClickListener {
 
-//    private val userViewModel by activityViewModels<UserViewModel>()
+    @Inject
+    lateinit var userViewModel: UserViewModel
 
     private lateinit var appContainer: AppContainer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        appContainer = (activity?.application as MyApplication).appContainer
+        (activity?.applicationContext as MyApplication).applicationComponent.inject(this)
     }
 
     override fun onCreateView(
@@ -32,14 +34,14 @@ class FoodFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        appContainer.userViewModel.user.observe(viewLifecycleOwner, Observer {
+        userViewModel.user.observe(viewLifecycleOwner, Observer {
             artistNameText.text = it.username
         })
         fetchButton.setOnClickListener(this)
     }
 
     private fun getFoodByID() {
-        appContainer.userViewModel.getUser(artistInputText.text.toString())
+        userViewModel.getUser(artistInputText.text.toString())
     }
 
     override fun onClick(v: View?) {

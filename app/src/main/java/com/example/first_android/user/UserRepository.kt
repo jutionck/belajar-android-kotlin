@@ -5,9 +5,9 @@ import com.example.first_android.respon_data.ResponseData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.sql.Wrapper
+import javax.inject.Inject
 
-class UserRepository(private val userAPI: UserAPI) {
+class UserRepository @Inject constructor(private val userAPI: UserAPI) {
 
     var user: MutableLiveData<User> = MutableLiveData<User>()
 
@@ -49,5 +49,4 @@ class UserRepository(private val userAPI: UserAPI) {
 
         })
     }
-
 }
