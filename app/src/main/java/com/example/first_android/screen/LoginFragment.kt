@@ -32,7 +32,9 @@ class LoginFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnLogin.setOnClickListener(this)
-
+        if (sharedPreferences?.contains(getString(R.string.username_key))!!){
+            view.findNavController().navigate(R.id.action_loginFragment2_to_homeFragment2)
+        }
     }
 
     override fun onClick(v: View?) {

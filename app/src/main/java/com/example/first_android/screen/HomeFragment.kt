@@ -1,5 +1,6 @@
 package com.example.first_android.screen
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -7,10 +8,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.example.first_android.R
 import kotlinx.android.synthetic.main.fragment_home2.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
 
     private var sharedPreferences: SharedPreferences? = null
 
@@ -29,10 +31,24 @@ class HomeFragment : Fragment() {
     }
 
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val username = sharedPreferences?.getString(getString(R.string.username_key), getString(R.string.default_value))
-        usernameView.text = username
+        usernameView.text = "Hello, $username"
+        btnLogout.setOnClickListener(this)
 
+    }
+
+    override fun onClick(v: View?) {
+        when(v) {
+            btnLogout -> {
+                with(sharedPreferences?.edit()) {
+                    this?.remove(getString(R.string.username_key))
+                    this?.commit()
+                }
+                v?.findNavController()?.navigate(R.id.action_homeFragment2_pop)
+            }
+        }
     }
 }
