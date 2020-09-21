@@ -1,20 +1,4 @@
 <resources>
-    <string name="app_name">Retrofit</string>
-    <string name="submit">Submit</string>
-    <string name="debut">Debut</string>
-    <string name="name">Name</string>
-    <string name="debutview">DebutView</string>
-    <string name="shared_preferences_name">com.example.shared.preferences</string>
-    <string name="username_key">USER_NAME</string>
-    <string name="default_value">Jution</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="show_data_food">Show Data</string>
-    <string name="create_data_food">Create Data</string>
-    <string name="password">Password</string>
-    <string name="submit_user">SUBMIT</string>
-    <string name="last_name">Last Name</string>
-    <string name="fisrt_name">Fisrt Name</string>
-    <string name="username">Username</string>
+    <string name="app_name">Camera</string>
 
 </resources>
