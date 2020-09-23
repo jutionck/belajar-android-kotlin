@@ -33,12 +33,12 @@ class HistoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val transaksiID =  "1"
         historyRecycleView.layoutManager = LinearLayoutManager(activity)
-        transaksiViewModel.getTranaksiByID(transaksiID)
+//        transaksiViewModel.getTranaksiByID("1")
         transaksiViewModel.transaksiList.observe(viewLifecycleOwner, Observer {
             transaksiRecycleAdapter = TransaksiRecycleAdapter(it)
             historyRecycleView.adapter = transaksiRecycleAdapter
         })
+        transaksiViewModel.getAllTransaksi()
     }
 }

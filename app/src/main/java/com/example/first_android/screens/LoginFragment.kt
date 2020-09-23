@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.first_android.R
@@ -34,7 +35,13 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when(v) {
-            btnLogin -> {navController.navigate(R.id.action_loginFragment_to_homeFragment)}
+            btnLogin -> {
+                if (usernameTextInput.text.toString() ==  "jutionck" && passwordTextInput.text.toString() == "12345678") {
+                    navController.navigate(R.id.action_loginFragment_to_homeFragment)
+                } else {
+                    Toast.makeText(context, "LOGIN FAILED", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 

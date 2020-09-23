@@ -1,5 +1,7 @@
 package com.example.first_android.screens
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -37,11 +39,13 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
+        val intent = Intent(Intent.ACTION_DIAL)
         when(v) {
             btnTransfer -> {navController.navigate(R.id.action_homeFragment_to_transferFragment)}
             btnHistory -> {navController.navigate(R.id.action_homeFragment_to_historyFragment)}
             btnCallOffice -> {
-                Toast.makeText(this.context, "Call Button : Comming Soon", Toast.LENGTH_SHORT).show()
+                intent.data = Uri.parse("tel: 072110101001")
+                startActivity(intent)
             }
         }
     }

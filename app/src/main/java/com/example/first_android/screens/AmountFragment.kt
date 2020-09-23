@@ -42,7 +42,7 @@ class AmountFragment : Fragment(), View.OnClickListener {
         when(v) {
             button_send -> {
                 val bankName = arguments?.getString("bankName")
-                val newFilm = Transaksi(user_owner_id = "1", trans_date = "2020-08-24 17:00", destination = bankName.toString(), amount = amountTextInput.toString(), description = keteranganTextInput.toString())
+                val newFilm = Transaksi(user_owner_id = "1", trans_date = "2020-09-23 13:47", destination = bankName.toString(), amount = "1000", description = keteranganTextInput.toString())
                 transaksiViewModel.createTransaksi(newFilm)
                 navController.navigate(R.id.action_amountFragment_to_confirmFragment)
             }
