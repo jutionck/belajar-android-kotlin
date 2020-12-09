@@ -8,4 +8,6 @@
     <string name="_2nd_player">2nd Player</string>
     <string name="_1st_player">1st Player</string>
     <string name="pencet">PENCET</string>
+    <string name="versus">VS</string>
+    <string name="this_is_main_activity">This is Main Activity</string>
 </resources>

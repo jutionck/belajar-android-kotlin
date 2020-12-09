@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="This is Main Activity"
+        android:text="@string/this_is_main_activity"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,13 +32,17 @@
             android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/_1st_player" />
+            android:hint="@string/_1st_player"
+            android:autofillHints=""
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/input_name2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/_2nd_player" />
+            android:hint="@string/_2nd_player"
+            android:autofillHints=""
+            android:inputType="text" />
 
 
         <com.google.android.material.button.MaterialButton
@@ -64,9 +68,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="VS"
+            android:text="@string/versus"
             android:textAlignment="center"
-            android:textSize="20dp"/>
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
